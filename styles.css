@@ -8,7 +8,7 @@ p, section{
     margin:10px auto;
   }
 
-img{
+ img{
 
  	/* Automatically resizes the images to fit the window width */
  	max-width: 100%;
@@ -16,7 +16,7 @@ img{
 
  	/* Customizing border */
  	border: outset;
- 	border-color: #0B1912;
+ 	border-color: #8B4513;
  	padding: 5px;
  	border-width: 4px;
  }
@@ -66,9 +66,10 @@ header h1{
 	/* Left-aligns the text */
 	text-align: left;
 
-	background-color: #CCDEE0;
+	background-color: #CD853F;
 
 	font-family: 'Optima';
+
 
 }
 
@@ -147,33 +148,19 @@ p.chartWrapper {
 	max-width: 700px;
 
 	padding: 20px;
-	border: 5px double #0B1912;
-}
-
-#first_column,
-#second_column {
-  width: 50%;
-}
-
-#first_column {
-  float:left;
-}
-
-#first_column {
-  float:right;
+	border: 5px double #CD853F;
 }
 
 /* Twitter embed styles */
 .twitter-tweet {
 
+	/* Adds a little space above and below */ 
+	padding-top: 20px;
+	padding-bottom: 20px;
+
 	/* Uses the margin trick to center */
     margin: 10px auto;
-	border: 5px double #0B1912;
 	
-}
-
-hr {
-	border: 3px double #0B1912;
 }
 
 /* Styles for the final section */
@@ -188,10 +175,5 @@ section.last{
 	text-align: right;
 	font-style: italic;
 	font-size: 12px;
-}
-
-article{
-	margin-right: 200px;
-	margin-left: 200px;
 }
 
