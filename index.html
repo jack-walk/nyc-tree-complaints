@@ -11,6 +11,9 @@
 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
+    <!-- Navigation Component -->
+    <script src="js/navigation.js"></script>
+
     <!-- title, dek and byline -->
   	<title>Advanced Data Journalism - Final Project</title>
   </head>
@@ -147,5 +150,19 @@
 			Tktk.
 		</p>
 	</section>
+
+	<!-- View Data Button -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const viewDataBtn = new NavigationButton({
+				label: 'View the Data',
+				targetPage: 'data-analysis.html',
+				containerSelector: 'body',
+				className: 'view-data-btn'
+			});
+			viewDataBtn.render();
+		});
+	</script>
+
   </body>
 </html>

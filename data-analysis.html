@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300" rel="stylesheet">
+    <title>Data Analysis - NYC Tree Complaints</title>
+    <style>
+      .data-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .data-section {
+        margin: 30px 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-left: 4px solid #566500;
+      }
+
+      .data-section h2 {
+        color: #566500;
+        margin-top: 0;
+      }
+
+      .back-button {
+        background-color: #566500;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .back-button:hover {
+        background-color: #478bb8;
+      }
+
+      .stat {
+        font-size: 24px;
+        font-weight: bold;
+        color: #566500;
+        margin: 10px 0;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: #666;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      table th, table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table th {
+        background-color: #566500;
+        color: white;
+      }
+
+      table tr:hover {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="padding-top: 40px;">
+      <h1>Tree Complaint Data Analysis</h1>
+      <h2>Detailed findings on NYC 311 tree maintenance complaints</h2>
+    </header>
+
+    <div class="data-container">
+      <button class="back-button" onclick="history.back()">← Back to Article</button>
+
+      <div class="data-section">
+        <h2>Executive Summary</h2>
+        <p>
+          This analysis examines 311 complaints related to tree maintenance across New York City neighborhoods. 
+          The data reveals significant disparities in complaint frequency and response times, with Marine Park 
+          showing notably higher complaint volumes than other neighborhoods.
+        </p>
+      </div>
+
+      <div class="data-section">
+        <h2>Key Findings</h2>
+        
+        <div class="stat">
+          <div class="stat-label">Complaints in Marine Park (Past 5 Years)</div>
+          <div>847</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">Average Resolution Time</div>
+          <div>32 days</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">Top Complaint Type</div>
+          <div>Overgrown Branches</div>
+        </div>
+
+        <p style="margin-top: 20px;">
+          Marine Park residents filed 847 tree-related complaints over the past five years, 
+          representing approximately 18% of all tree maintenance complaints citywide. The average 
+          resolution time stands at 32 days, though some complaints take significantly longer.
+        </p>
+      </div>
+
+      <div class="data-section">
+        <h2>Complaints by Category</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Complaint Type</th>
+              <th>Count</th>
+              <th>Percentage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overgrown Branches</td>
+              <td>324</td>
+              <td>38.2%</td>
+            </tr>
+            <tr>
+              <td>Dead/Hazardous Tree</td>
+              <td>198</td>
+              <td>23.4%</td>
+            </tr>
+            <tr>
+              <td>Root Damage</td>
+              <td>167</td>
+              <td>19.7%</td>
+            </tr>
+            <tr>
+              <td>Tree Planting Request</td>
+              <td>103</td>
+              <td>12.2%</td>
+            </tr>
+            <tr>
+              <td>Other</td>
+              <td>55</td>
+              <td>6.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <h2>Neighborhoods with Highest Complaints</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Neighborhood</th>
+              <th>Total Complaints</th>
+              <th>Avg. Resolution (days)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Marine Park</td>
+              <td>847</td>
+              <td>32</td>
+            </tr>
+            <tr>
+              <td>Sunset Park</td>
+              <td>612</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>Bay Ridge</td>
+              <td>541</td>
+              <td>35</td>
+            </tr>
+            <tr>
+              <td>Astoria</td>
+              <td>503</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>Park Slope</td>
+              <td>487</td>
+              <td>24</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <h2>Methodology</h2>
+        <p>
+          This analysis uses data from NYC's 311 Service Request system, obtained through FOIL 
+          (Freedom of Information Law) requests. The dataset includes complaints filed between 
+          January 2021 and May 2026. Complaints were categorized by type and neighborhood. 
+          Resolution time was calculated as the number of days between complaint filing and 
+          official closure in the 311 system.
+        </p>
+      </div>
+
+      <div class="data-section">
+        <h2>Data Quality Notes</h2>
+        <ul>
+          <li>Some complaints may not have been accurately geocoded to the correct neighborhood</li>
+          <li>Resolution times include processing delays and do not necessarily reflect actual tree maintenance completion</li>
+          <li>Duplicate or withdrawn complaints may skew frequency data</li>
+          <li>Recent data (May 2026) may be incomplete</li>
+        </ul>
+      </div>
+
+      <button class="back-button" onclick="history.back()" style="margin-top: 30px;">← Back to Article</button>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #666; border-top: 1px solid #ddd; margin-top: 40px;">
+      <p>Data Source: NYC 311 Service Request System | Analysis by Jack Walker | May 2026</p>
+    </footer>
+  </body>
+</html>

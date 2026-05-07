@@ -1,0 +1,21 @@
+{
+  "name": "nyc-tree-complaints",
+  "version": "1.0.0",
+  "description": "A data investigation on NYC tree maintenance complaints in Marine Park",
+  "main": "index.html",
+  "scripts": {
+    "dev": "http-server -p 8000 -o",
+    "start": "http-server -p 8000"
+  },
+  "keywords": [
+    "data-journalism",
+    "nyc",
+    "trees",
+    "311-complaints"
+  ],
+  "author": "Jack Walker",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

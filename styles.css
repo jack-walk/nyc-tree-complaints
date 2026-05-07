@@ -207,3 +207,50 @@ section.last{
 	font-size: 12px;
 }
 
+/* Styles for the View Data button */
+.view-data-btn {
+	display: block;
+	margin: 40px auto;
+	padding: 15px 40px;
+	background-color: #566500;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	max-width: 200px;
+}
+
+.view-data-btn:hover {
+	background-color: #478bb8;
+}
+
+.view-data-btn:active {
+	transform: scale(0.98);
+}
+
+/* Navigation button styles */
+.nav-button {
+	display: block;
+	margin: 20px auto;
+	padding: 12px 30px;
+	background-color: #566500;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+	background-color: #478bb8;
+}
+
+.nav-button:active {
+	transform: scale(0.98);
+}
+
