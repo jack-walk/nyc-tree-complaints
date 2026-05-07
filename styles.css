@@ -66,9 +66,14 @@ header h1{
 	/* Left-aligns the text */
 	text-align: left;
 
-	background-color: #CD853F;
+	/* Green text */
+	color: #566500;
 
-	font-family: 'Optima';
+	/* Bold text */
+	font-weight: bold;
+
+	/* One of the best fonts.... */
+	font-family: 'Montserrat';
 
 
 }
