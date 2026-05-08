@@ -118,31 +118,6 @@ header h2, h3{
 	text-align: left;
 }
 
-/*customizing text for h1*/
-.sillyHeader{
-
-	/* Limits the width of the headline so that it's more readable */
-	max-width: 760px;
-
-	/* Uses the margin trick to center */
-	margin: 10px auto;
- 
-	/* Left-aligns the text */
-	text-align: left;
-
-	/* Green text */
-	color: BLACK;
-
-	/* Bold text */
-	font-weight: bold;
-
-	/* One of the best fonts.... */
-	font-family: 'Montserrat';
-
-	/* Big old font*/
-	font-size: 100px;
-
-}
 
 /*customizing text for h2*/
 header h2 {
