@@ -23,27 +23,6 @@ p, section{
  	border-width: 4px;
  }
 
- .extraPhoto{
- 	/* Center align the photo */
- 	text-align: center;
- 	
- 	/* Uses the margin trick to center */
- 	margin: 10px auto;
- }
- 
- .extraPhoto img{
-
- 	/* Automatically resizes the images to fit the window width */
- 	max-width: 100%;
- 	height: auto;
-
- 	/* Customizing border */
- 	border: outset;
- 	border-color: #566500;
- 	padding: 5px;
- 	border-width: 4px;
-}
-
  /* Link styles */
 a{
 	color: #478bb8;
@@ -234,7 +213,7 @@ section.last{
 
 /* Navigation button styles */
 .nav-button {
-	display: block;
+	display: inline-block;
 	margin: 20px auto;
 	padding: 12px 30px;
 	background-color: #566500;
@@ -245,6 +224,8 @@ section.last{
 	font-weight: bold;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+	white-space: nowrap;
+	width: fit-content;
 }
 
 .nav-button:hover {
@@ -254,4 +235,3 @@ section.last{
 .nav-button:active {
 	transform: scale(0.98);
 }
-
