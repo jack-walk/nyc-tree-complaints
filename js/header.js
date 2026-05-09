@@ -53,7 +53,7 @@ class HeaderComponent {
 window.addEventListener('DOMContentLoaded', () => {
 	const headerComponent = new HeaderComponent({
 		imageSrc: 'images/wires3.JPG',
-		imageAlt: 'Overhead utility wires near trees in Marine Park.',
+		imageAlt: 'Utility wires pass through the branches of a tree. Some appear to be caught in the branches.',
 		headline: 'Marine Park residents have complained about <span style="color:#302a03;">tree maintenance</span> for years. Are city officials listening?',
 		subheadline: 'The neighborhood ranks first in tree maintenance complaints, a new data investigation reveals. Residents worry the city is overlooking safety risks.',
 		byline: 'By <strong><a href="https://jackwalker.xyz">Jack Walker</a></strong> | May TK, 2026'
