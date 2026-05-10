@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		imageSrc: 'images/wires3.JPG',
 		imageAlt: 'Utility wires pass through the branches of a tree. Some appear to be caught in the branches.',
 		headline: 'Marine Park residents have complained about <span style="color:#302a03;">tree maintenance</span> for years. Are city officials listening?',
-		subheadline: 'The neighborhood ranks first in requests for tree care, a new data investigation reveals. Residents worry the city is overlooking safety risks.',
+		subheadline: 'A new data investigation reveals that the neighborhood ranks first in tree service requests. Residents worry the city is overlooking risks to safety and property.',
 		byline: 'By <strong><a href="https://jackwalker.xyz">Jack Walker</a></strong> | May TK, 2026'
 	});
 
