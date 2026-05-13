@@ -456,7 +456,7 @@ section.last{
 	display: block;
 	margin: 40px auto;
 	padding: 12px 30px;
-	background-color: #478bb8;
+	background-color: #566500;
 	color: white;
 	border: none;
 	border-radius: 4px;
@@ -468,7 +468,7 @@ section.last{
 }
 
 .back-btn:hover {
-	background-color: #566500;
+	background-color: #478bb8;
 }
 
 .back-btn:active {
@@ -678,6 +678,17 @@ section.last{
 	height: 100%;
 	background-color: #566500;
 	transition: width 0.3s ease;
+}
+
+.complaint-type-count.no-data {
+	color: #999;
+	font-style: italic;
+	font-size: 13px;
+}
+
+.no-data-item {
+	opacity: 0.7;
+	background-color: #fafafa;
 }
 
 .search-again-btn {

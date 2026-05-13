@@ -10,6 +10,7 @@ class ZipCodeComparison {
     this.data = [];
     this.processedData = {}; // Organized by zip code
     this.zipCodeRankings = []; // Ranked zip codes
+    this.allProblemTypes = []; // All possible problem types
     this.loadData();
   }
 
@@ -73,6 +74,17 @@ class ZipCodeComparison {
    * Processes raw data into organized structure
    */
   processData() {
+    // First pass: collect all problem types
+    this.data.forEach(row => {
+      const problemType = row['Problem Detail (formerly Descriptor)'];
+      if (!this.allProblemTypes.includes(problemType)) {
+        this.allProblemTypes.push(problemType);
+      }
+    });
+    
+    // Sort problem types for consistent display
+    this.allProblemTypes.sort();
+
     // Initialize zip code data
     this.data.forEach(row => {
       const zipCode = row['Incident Zip'];
@@ -83,7 +95,8 @@ class ZipCodeComparison {
         this.processedData[zipCode] = {
           zipCode: zipCode,
           totalComplaints: 0,
-          complaintsByType: {}
+          complaintsByType: {},
+          hasIncompleteData: false
         };
       }
 
@@ -93,6 +106,15 @@ class ZipCodeComparison {
         this.processedData[zipCode].complaintsByType[problemType] = 0;
       }
       this.processedData[zipCode].complaintsByType[problemType] += count;
+    });
+
+    // Check for incomplete data and mark it
+    this.allProblemTypes.forEach(type => {
+      Object.values(this.processedData).forEach(zipData => {
+        if (!(type in zipData.complaintsByType)) {
+          zipData.hasIncompleteData = true;
+        }
+      });
     });
 
     // Create rankings based on total complaints
@@ -261,29 +283,48 @@ class ZipCodeComparison {
     document.getElementById('ranking-value').textContent = `#${result.rank} of ${total}`;
     document.getElementById('ranking-detail').textContent = `Top ${percentile}% in the city`;
 
-    // Sort complaint types by count (descending)
-    const sortedTypes = Object.entries(result.complaintsByType)
-      .sort((a, b) => b[1] - a[1]);
-
-    // Build complaint types list
+    // Build complaint types list - include all types, even if missing
     const complaintsList = document.getElementById('complaints-list');
     complaintsList.innerHTML = '';
 
-    sortedTypes.forEach(([type, count]) => {
+    // Sort all problem types: available first (by count descending), then unavailable
+    const typesWithData = this.allProblemTypes.filter(type => type in result.complaintsByType);
+    const typesWithoutData = this.allProblemTypes.filter(type => !(type in result.complaintsByType));
+    
+    const sortedTypes = [
+      ...typesWithData.sort((a, b) => result.complaintsByType[b] - result.complaintsByType[a]),
+      ...typesWithoutData
+    ];
+
+    sortedTypes.forEach(type => {
       const item = document.createElement('div');
       item.className = 'complaint-type-item';
       
-      const percentage = ((count / result.totalComplaints) * 100).toFixed(1);
-      
-      item.innerHTML = `
-        <div class="complaint-type-info">
-          <span class="complaint-type-name">${type}</span>
-          <span class="complaint-type-count">${count} complaints (${percentage}%)</span>
-        </div>
-        <div class="complaint-type-bar">
-          <div class="complaint-type-bar-fill" style="width: ${percentage}%"></div>
-        </div>
-      `;
+      if (type in result.complaintsByType) {
+        const count = result.complaintsByType[type];
+        const percentage = ((count / result.totalComplaints) * 100).toFixed(1);
+        
+        item.innerHTML = `
+          <div class="complaint-type-info">
+            <span class="complaint-type-name">${type}</span>
+            <span class="complaint-type-count">${count} complaints (${percentage}%)</span>
+          </div>
+          <div class="complaint-type-bar">
+            <div class="complaint-type-bar-fill" style="width: ${percentage}%"></div>
+          </div>
+        `;
+      } else {
+        item.innerHTML = `
+          <div class="complaint-type-info">
+            <span class="complaint-type-name">${type}</span>
+            <span class="complaint-type-count no-data">Data Not Available</span>
+          </div>
+          <div class="complaint-type-bar">
+            <div class="complaint-type-bar-fill" style="width: 0%"></div>
+          </div>
+        `;
+        item.classList.add('no-data-item');
+      }
       
       complaintsList.appendChild(item);
     });
