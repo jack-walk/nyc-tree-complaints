@@ -417,12 +417,12 @@ section.last{
 
 .button-pair-btn {
 	display: inline-block;
-	padding: 15px 40px;
+	padding: 15px 25px;
 	background-color: #566500;
 	color: white;
 	border: none;
 	border-radius: 4px;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
