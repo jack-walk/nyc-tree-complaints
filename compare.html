@@ -12,7 +12,7 @@
     <!-- Zip Code Comparison Component -->
     <script src="js/zip-code-comparison.js"></script>
 
-    <title>Compare Zip Codes - Tree Complaints</title>
+    <title>Compare Neighborhoods and Zip Codes - Tree Complaints</title>
   </head>
   <body>
     <!-- Zip Code Comparison Tool -->
@@ -31,7 +31,8 @@
 
         // Initialize the zip code comparison tool
         const comparison = new ZipCodeComparison({
-          dataFile: 'data/complaints_all_zip_codes copy.csv',
+          complaintsFile: 'data/complaints_all_zip_codes copy.csv',
+          neighborhoodsFile: 'data/neighborhoods.csv',
           containerSelector: '#zip-comparison-root'
         });
       });

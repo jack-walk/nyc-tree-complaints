@@ -517,6 +517,13 @@ section.last{
 	margin-right: auto;
 }
 
+.search-input-wrap {
+	position: relative;
+	display: inline-block;
+	width: min(100%, 420px);
+	margin-bottom: 0;
+}
+
 .search-section label {
 	display: block;
 	font-size: 14px;
@@ -528,13 +535,14 @@ section.last{
 }
 
 .zip-code-input {
+	box-sizing: border-box;
 	padding: 12px 15px;
 	font-size: 16px;
 	border: 2px solid #566500;
 	border-radius: 4px;
-	width: 150px;
+	width: 100%;
 	text-align: center;
-	margin-right: 10px;
+	margin-right: 0;
 	margin-bottom: 0;
 }
 
@@ -564,6 +572,66 @@ section.last{
 
 .search-btn:active {
 	transform: scale(0.98);
+}
+
+.suggestions-box {
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	right: 0;
+	z-index: 20;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-radius: 6px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	max-height: 260px;
+	overflow-y: auto;
+	padding: 6px;
+}
+
+.suggestion-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2px;
+	width: 100%;
+	padding: 10px 12px;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	font-family: inherit;
+	transition: background-color 0.2s ease;
+}
+
+.suggestion-item-topline {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+	background-color: #eef3e8;
+	outline: none;
+}
+
+.suggestion-item-label {
+	font-weight: 700;
+	color: #333;
+	font-size: 14px;
+}
+
+.suggestion-item-detail {
+	font-size: 12px;
+	color: #666;
+}
+
+.suggestion-item + .suggestion-item {
+	margin-top: 2px;
 }
 
 /* Results Section Styles */
@@ -620,6 +688,32 @@ section.last{
 
 .ranking .result-value {
 	color: #d4a574;
+}
+
+.result-subheader {
+	margin-top: -8px;
+	margin-bottom: 14px;
+	text-align: center;
+	color: #666;
+	font-size: 14px;
+}
+
+.result-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.result-tag {
+	background-color: #eaf0e5;
+	color: #566500;
+	border-radius: 999px;
+	padding: 6px 10px;
+	font-size: 12px;
+	font-weight: bold;
+	white-space: nowrap;
 }
 
 /* Complaints by Type Styles */
@@ -689,6 +783,142 @@ section.last{
 .no-data-item {
 	opacity: 0.7;
 	background-color: #fafafa;
+}
+
+.complaint-section-card {
+	background-color: white;
+	padding: 15px;
+	border-radius: 6px;
+	border: 1px solid #e0e0e0;
+	margin-bottom: 12px;
+}
+
+.complaint-section-header {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+
+.complaint-section-title {
+	font-weight: 700;
+	color: #333;
+	text-align: left;
+}
+
+.complaint-section-total {
+	font-weight: 700;
+	color: #566500;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.complaint-section-total.no-data {
+	color: #999;
+	font-style: italic;
+}
+
+.complaint-subitems {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.complaint-subitem {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.complaint-subitem.no-data {
+	color: #999;
+	font-style: italic;
+}
+
+.complaint-subitem-label {
+	flex: 1;
+	text-align: left;
+}
+
+.complaint-subitem-value {
+	white-space: nowrap;
+	text-align: right;
+}
+
+.zip-result-card {
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	border-left: 5px solid #566500;
+	border-radius: 8px;
+	padding: 18px;
+	margin-bottom: 18px;
+}
+
+.zip-result-card--nested {
+	margin-top: 14px;
+}
+
+.zip-result-summary {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	align-items: flex-start;
+	margin-bottom: 16px;
+}
+
+.zip-result-kicker {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #999;
+	margin-bottom: 6px;
+}
+
+.zip-result-title {
+	margin: 0;
+	font-size: 22px;
+	color: #566500;
+	font-family: 'Montserrat';
+}
+
+.zip-result-subtitle {
+	color: #666;
+	margin-top: 6px;
+	font-size: 14px;
+}
+
+.zip-result-meta {
+	text-align: right;
+	min-width: 160px;
+}
+
+.zip-result-total {
+	font-size: 28px;
+	font-weight: 700;
+	color: #478bb8;
+	line-height: 1;
+}
+
+.zip-result-meta-label {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #999;
+	margin-top: 4px;
+}
+
+.zip-result-meta-rank {
+	font-size: 13px;
+	color: #666;
+	margin-top: 8px;
+}
+
+.zip-result-sections {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .search-again-btn {
