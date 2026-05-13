@@ -14,6 +14,9 @@
     <!-- Navigation Component -->
     <script src="js/navigation.js"></script>
 
+	<!-- Button Pair Component -->
+	<script src="js/button-pair.js"></script>
+
 	<!-- Header Component -->
 	<script src="js/header.js"></script>
 
@@ -127,16 +130,26 @@
 		</p>
 	</section>
 
-	<!-- View Data Button -->
+	<!-- View Data and Compare Zip Codes Buttons -->
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			const viewDataBtn = new NavigationButton({
-				label: 'MORE DATA',
-				targetPage: 'data-analysis.html',
+			const buttonPair = new ButtonPair({
+				buttons: [
+					{
+						label: 'COMPARE ZIP CODES',
+						targetPage: 'compare-zip-codes.html',
+						className: 'compare-zip-codes-btn'
+					},
+					{
+						label: 'MORE DATA',
+						targetPage: 'data-analysis.html',
+						className: 'view-data-btn'
+					}
+				],
 				containerSelector: 'body',
-				className: 'view-data-btn'
+				className: 'button-pair-container'
 			});
-			viewDataBtn.render();
+			buttonPair.render();
 		});
 	</script>
   </body padding-bottom: 80px;>
