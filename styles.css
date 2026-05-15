@@ -277,7 +277,8 @@ header.storyHeader {
 
 	p.chartWrapper {
 		max-width: calc(100% - 24px);
-		padding: 12px;
+		margin: 40px auto;
+		padding: 0 12px;
 		box-sizing: border-box;
 	}
 
@@ -295,6 +296,7 @@ figure.banner{
 
 	/* Uses the margin trick to center */
  	margin: 0px auto;
+    padding: 40px 0;
  }
 
  figcaption.bannerCaption{
@@ -321,13 +323,13 @@ figure.banner{
 p.chartWrapper {
 
 	/* Adds space above and below the chart */
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 40px auto;
 
 	/* Overrides the Max Width setting for paragraphs */
 	max-width: 700px;
 
-	padding: 20px;
+	/* Keep horizontal inner padding; vertical spacing is provided by margin */
+	padding: 10px 20px;
 	border: 5px double #566500;
 }
 
