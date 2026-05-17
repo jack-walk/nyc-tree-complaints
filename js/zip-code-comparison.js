@@ -159,9 +159,9 @@ class ZipCodeComparison {
       const borough = row['Borough'] || 'Data Not Available';
       const normalizedNeighborhood = this.normalizeText(neighborhood);
       const normalizedBorough = this.normalizeText(borough);
-      const queryParts = normalizedQuery.split(' ');
+      
+      // Check if the full query phrase matches the neighborhood or borough
       const matchesNeighborhood = normalizedNeighborhood.startsWith(normalizedQuery)
-        || queryParts.some(part => part && normalizedNeighborhood.split(' ').some(word => word.startsWith(part)))
         || normalizedNeighborhood.includes(normalizedQuery);
       const matchesBorough = normalizedBorough.startsWith(normalizedQuery) || normalizedBorough.includes(normalizedQuery);
 
