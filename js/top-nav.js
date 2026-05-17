@@ -20,7 +20,7 @@ class TopNav {
 
 		const brandText = document.createElement('span');
 		brandText.textContent = this.brandLabel;
-		brandText.className = 'top-nav__link top-nav__link--brand';
+		brandText.className = 'top-nav__brand-text';
 
 		left.appendChild(brandText);
 
@@ -39,6 +39,12 @@ class TopNav {
 
 		right.appendChild(websiteLink);
 		right.appendChild(githubLink);
+
+		const bunnyImage = document.createElement('img');
+		bunnyImage.src = 'images/bunnies.png';
+		bunnyImage.alt = 'Bunnies';
+		bunnyImage.className = 'top-nav__bunny-image';
+		right.appendChild(bunnyImage);
 
 		nav.appendChild(left);
 		nav.appendChild(right);

@@ -2,11 +2,11 @@
 
 /* Top navigation bar */
 .top-nav {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr auto;
 	align-items: center;
-	gap: 16px;
-	padding: 8px 20px 9px;
+	column-gap: 16px;
+	padding: 4px 20px 9px;
 	border-bottom: 1px solid #000;
 	background: #fff;
 	font-family: 'Montserrat', sans-serif;
@@ -24,8 +24,35 @@
 	min-width: 0;
 }
 
+.top-nav__section--left {
+	justify-self: start;
+}
+
+.top-nav__section--center {
+	display: none;
+}
+
+.top-nav__bunny-button {
+	display: none;
+}
+
+.top-nav__bunny-viewport,
+.top-nav__bunny-message {
+	display: none;
+}
+
+.top-nav__bunny-image {
+	display: inline-block;
+	align-self: center;
+	height: 32px;
+	width: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
 .top-nav__section--right {
-	margin-left: auto;
+	justify-self: end;
 	justify-content: flex-end;
 	flex-wrap: wrap;
 }
@@ -41,8 +68,12 @@
 	text-decoration: underline;
 }
 
-.top-nav__link--brand {
+.top-nav__brand-text {
 	font-weight: 700;
+	color: #000;
+	white-space: nowrap;
+	cursor: default;
+	font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -54,6 +85,10 @@
 
 	.top-nav__section {
 		gap: 12px;
+	}
+
+	.top-nav__bunny-image {
+		height: 26px;
 	}
 }
 
