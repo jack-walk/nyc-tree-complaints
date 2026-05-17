@@ -1,5 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* Top navigation bar */
+.top-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	padding: 8px 20px 9px;
+	border-bottom: 1px solid #000;
+	background: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+	line-height: 1.2;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+.top-nav__section {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	min-width: 0;
+}
+
+.top-nav__section--right {
+	margin-left: auto;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.top-nav__link {
+	color: #000;
+	text-decoration: none;
+	font-family: inherit;
+	white-space: nowrap;
+}
+
+.top-nav__link:hover {
+	text-decoration: underline;
+}
+
+.top-nav__link--brand {
+	font-weight: 700;
+}
+
+@media (max-width: 600px) {
+	.top-nav {
+		padding: 8px 12px;
+		font-size: 12px;
+		gap: 10px;
+	}
+
+	.top-nav__section {
+		gap: 12px;
+	}
+}
+
 /* General styles */
 
 p, section{
